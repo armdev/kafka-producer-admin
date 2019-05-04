@@ -1,0 +1,8 @@
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/ErrorListener.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/ProducerService.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/ProducerConfig.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/KafkaSender.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/KproducerApplication.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/ConsumerConfig.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/ProducerController.java
+/media/armena/Data/kafka-admin/kproducer/src/main/java/io/project/app/kproducer/SwaggerConfig.java
