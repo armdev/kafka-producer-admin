@@ -19,16 +19,12 @@ import org.springframework.web.client.RestTemplate;
 @EnableAutoConfiguration
 public class KadminApplication {
 
- 
-
     public static void main(String[] args) {
         final SpringApplication application = new SpringApplication(KadminApplication.class);
         application.setBannerMode(Banner.Mode.CONSOLE);
         application.setWebApplicationType(WebApplicationType.SERVLET);
         application.run(args);
     }
-
-
 
     @Bean
     public RestTemplate restTemplate() {

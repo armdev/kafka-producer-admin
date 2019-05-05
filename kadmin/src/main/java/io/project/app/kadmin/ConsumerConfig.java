@@ -11,7 +11,6 @@ import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.context.annotation.Bean;
