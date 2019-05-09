@@ -19,12 +19,12 @@ management:
 
 
 server:
-  port: 5000
+  port: 5002
   connection-timeout: 30000
   
 spring:
   application:
-    name: kadmin     
+    name: collector     
 
   kafka:
     listener:
@@ -33,11 +33,11 @@ spring:
       batch-size: 1048570000
       bootstrap-servers: kafka:9092
       buffer-memory: 97938193
-      client-id: mpturbine
+      client-id: collector
       retries: 10   
     consumer:
       bootstrap-servers:  kafka:9092
-      group-id: mpturbine     
+      group-id: mpcollector     
       auto-offset-reset: earliest         
       enable-auto-commit: false
       session.timeout.ms: 300

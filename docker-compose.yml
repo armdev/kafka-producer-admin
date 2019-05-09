@@ -92,6 +92,33 @@ services:
       - /opt/kproducer/logs/:/opt/kproducer/logs
     networks:
       - kafkanet
+      
+  collector:
+    image: collector  
+    build: ./collector
+    container_name: collector
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    links:      
+      - kafka       
+    depends_on:     
+      - kafka        
+    ports:
+      - '5002:5002'
+    volumes:
+      - /opt/collector/logs/:/opt/collector/logs
+    networks:
+      - kafkanet
+  
   
   
 networks:
