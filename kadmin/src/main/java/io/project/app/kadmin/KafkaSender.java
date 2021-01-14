@@ -42,12 +42,12 @@ public class KafkaSender {
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result) {
-                log.info("KAFKA to  Success sent message='{}' with offset={}", payload, result.getRecordMetadata().offset());
+                log.info("KAFKA to  mplogs Success sent message='{}' with offset={}", payload, result.getRecordMetadata().offset());
             }
 
             @Override
             public void onFailure(Throwable ex) {
-                log.error("KAFKA FAIL: Unable to send message='{}'", payload, ex);
+                log.error("KAFKA FAIL: mplogs Unable to send message='{}'", payload, ex);
 
             }
         });

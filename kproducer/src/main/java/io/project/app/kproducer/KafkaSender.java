@@ -43,12 +43,12 @@ public class KafkaSender {
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result) {
-                log.info("KAFKA to  Success sent message='{}' with offset={}", payload, result.getRecordMetadata().offset());
+                log.info("KAFKA to MainTopic Success sent message='{}' with offset={}", payload, result.getRecordMetadata().offset());
             }
 
             @Override
             public void onFailure(Throwable ex) {
-                log.error("KAFKA FAIL: Unable to send message='{}'", payload, ex);
+                log.error("KAFKA FAIL: To MainTopic Unable to send message='{}'", payload, ex);
 
             }
         });
@@ -63,12 +63,12 @@ public class KafkaSender {
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result) {
-                log.info("KAFKA to  Success sent to error topic message='{}' with offset={}", payload, result.getRecordMetadata().offset());
+                log.info("KAFKA to errorTopic sent to error topic message='{}' with offset={}", payload, result.getRecordMetadata().offset());
             }
 
             @Override
             public void onFailure(Throwable ex) {
-                log.error("KAFKA FAIL: Unable send also to error channel: message='{}'", payload, ex);
+                log.error("KAFKA FAIL: errorTopic: Unable send also to error channel: message='{}'", payload, ex);
 
             }
         });

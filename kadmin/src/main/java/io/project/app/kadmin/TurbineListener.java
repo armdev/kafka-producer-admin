@@ -18,10 +18,10 @@ public class TurbineListener {
     @KafkaListener(topics = "mpturbine")
     public void processOutput(String output, Acknowledgment acknowledgment) {
         if (output != null) {
-            log.info("Request from mpturbine recieved");
+          ///  log.info("Request from mpturbine recieved");
+            log.info("Message: from mpturbine recieved: " + output);
             acknowledgment.acknowledge();
-        }
-        log.info("Message: " + output);
+        }      
         
         kafkaSender.sendData(output);
     }
