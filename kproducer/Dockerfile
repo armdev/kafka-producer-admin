@@ -1,5 +1,10 @@
 FROM registry.gitlab.com/armdev/dockers/openjdk15
-#FROM amazoncorretto:8
 COPY target/kproducer.jar /opt/kproducer.jar
-ENTRYPOINT ["java",  "-Xms1024m", "-Xmx2048m", "-XX:MetaspaceSize=96m", "-XX:+UseG1GC", "-XX:MaxGCPauseMillis=20",  "-XX:InitiatingHeapOccupancyPercent=35", "-XX:G1HeapRegionSize=16M", "-XX:MinMetaspaceFreeRatio=50", "-XX:MaxMetaspaceFreeRatio=80", "-jar","/opt/kproducer.jar"]
+ENTRYPOINT ["java", "-XX:+UseZGC", "-XX:MinHeapSize=512M", "-XX:InitialHeapSize=1G", "-XX:MaxHeapSize=4G", \
+            "-XX:ParallelGCThreads=100", "-XX:ConcGCThreads=30", \
+            "-XX:SoftRefLRUPolicyMSPerMB=0","-XX:ZCollectionInterval=30", "-XX:ZFragmentationLimit=10", \
+            "-XX:MaxGCPauseMillis=5", "-XX:+UseCompressedClassPointers", "-XX:-UseCompressedOops", "-XX:ZUncommitDelay=30", \
+            "-XX:InitiatingHeapOccupancyPercent=35", "-XX:G1HeapRegionSize=16M", \
+            "-XX:MinMetaspaceFreeRatio=50", "-XX:MaxMetaspaceFreeRatio=100",  \
+            "-XX:+UnlockExperimentalVMOptions", "-XshowSettings:vm", "-jar","/opt/kproducer.jar"]
 EXPOSE 5001
