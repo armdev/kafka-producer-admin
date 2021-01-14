@@ -2,11 +2,11 @@
 
 set -e
 
-sudo docker rm -f kafka
-sudo docker rmi -f kafka
+docker rm -f kafka
+docker rmi -f kafka
 
 
 
-sudo docker-compose up -d --no-deps --build kafka
-sudo docker ps -a
-sudo docker logs --follow kafka
+docker-compose up -d --no-deps --build kafka
+docker ps -a
+docker logs --follow kafka

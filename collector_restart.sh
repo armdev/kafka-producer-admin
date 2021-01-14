@@ -2,11 +2,11 @@
 
 set -e
 
-sudo docker rm -f collector
-sudo docker rmi -f collector
+docker rm -f collector
+docker rmi -f collector
 
 mvn clean install -pl collector -am -DskipTests=true
 
-sudo docker-compose up -d --no-deps --build  collector
-sudo docker ps -a
-sudo docker logs --follow collector
+docker-compose up -d --no-deps --build  collector
+docker ps -a
+docker logs --follow collector

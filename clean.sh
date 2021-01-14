@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo docker rm -f $(sudo docker ps -a -q)
-#sudo docker rmi $(sudo docker images -a -q)
-sudo docker rmi $(sudo docker images | grep "^<none>" | awk "{print $3}")
-sudo docker images
+docker rm -f $(docker ps -a -q)
+#docker rmi $(docker images -a -q)
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+docker images
