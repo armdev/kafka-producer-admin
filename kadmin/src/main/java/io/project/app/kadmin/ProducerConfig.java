@@ -47,8 +47,8 @@ public class ProducerConfig {
         return new KafkaTemplate<>(producerFactory());
     }
 
-    public KafkaSender kafkaSender() {
-        return new KafkaSender(kafkaTemplate());
+    public KafkaCollectorSender kafkaSender() {
+        return new KafkaCollectorSender(kafkaTemplate());
     }
 
 }

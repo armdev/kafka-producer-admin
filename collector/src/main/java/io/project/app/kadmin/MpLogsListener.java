@@ -15,10 +15,20 @@ public class MpLogsListener {
     @KafkaListener(topics = "mplogs")
     public void processOutput(String output, Acknowledgment acknowledgment) {
         if (output != null) {
-            log.info("Request from mplogs recieved " + output);
+            log.info("Success Request from mplogs recieved from kadmin " + output);
             acknowledgment.acknowledge();
-        }
-      
+        }     
+       
+    }
+    
+     
+    @KafkaListener(topics = "mperrors")
+    public void processError(String output, Acknowledgment acknowledgment) {
+        if (output != null) {
+          ///  log.info("Request from mpturbine recieved");
+            log.info("Error Message: from kproducer recieved: " + output);
+            acknowledgment.acknowledge();
+        }        
        
     }
 }

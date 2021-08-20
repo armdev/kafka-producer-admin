@@ -1,4 +1,4 @@
-FROM registry.gitlab.com/armdev/dockers/openjdk15
+FROM registry.gitlab.com/armdev/dockers/openjdk16
 #FROM amazoncorretto:8
 COPY target/collector.jar /opt/collector.jar
 ENTRYPOINT ["java", "-XX:+UseZGC", "-XX:MinHeapSize=512M", "-XX:InitialHeapSize=1G", "-XX:MaxHeapSize=4G", \

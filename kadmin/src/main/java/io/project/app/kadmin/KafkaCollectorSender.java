@@ -14,7 +14,7 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 @Service
 @Component
 @Slf4j
-public class KafkaSender {
+public class KafkaCollectorSender {
 
     /**
      * The output data store
@@ -29,7 +29,7 @@ public class KafkaSender {
      * @param kafkaTemplate The Kafka handler
      */
     @Autowired
-    public KafkaSender(KafkaTemplate<String, String> kafkaTemplate) {
+    public KafkaCollectorSender(KafkaTemplate<String, String> kafkaTemplate) {
         super();
         this.kafkaTemplate = kafkaTemplate;
     }

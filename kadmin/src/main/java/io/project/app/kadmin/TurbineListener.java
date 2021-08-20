@@ -13,16 +13,17 @@ import org.springframework.stereotype.Service;
 public class TurbineListener {
     
     @Autowired
-    private KafkaSender kafkaSender;
+    private KafkaCollectorSender kafkaSender;
 
     @KafkaListener(topics = "mpturbine")
     public void processOutput(String output, Acknowledgment acknowledgment) {
         if (output != null) {
           ///  log.info("Request from mpturbine recieved");
-            log.info("Message: from mpturbine recieved: " + output);
+            log.info("Success: Message: from mpturbine recieved: " + output);
             acknowledgment.acknowledge();
         }      
         
         kafkaSender.sendData(output);
     }
+   
 }

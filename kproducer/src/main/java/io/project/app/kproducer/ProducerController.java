@@ -27,7 +27,6 @@ public class ProducerController {
     @ResponseBody
     @CrossOrigin
     public ResponseEntity<?> post(@RequestBody String data) {
-
         return ResponseEntity.status(HttpStatus.OK).body(producerService.sendMessage(data + " - " + System.currentTimeMillis()));
 
     }
@@ -36,7 +35,6 @@ public class ProducerController {
     @ResponseBody
     @CrossOrigin
     public ResponseEntity<?> get() {
-
         return ResponseEntity.status(HttpStatus.OK).body(producerService.sendMessage("Data" + " - " + System.currentTimeMillis()));
 
     }
